@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConnectHub - Professional Community Platform</title>
+    <meta name="description" content="A professional networking platform to connect, share, and grow your career">
+    <meta name="keywords" content="networking, professional, community, career, posts, connections">
+    <meta property="og:title" content="ConnectHub - Professional Community Platform">
+    <meta property="og:description" content="Connect with professionals, share insights, and grow your network">
+    <meta name="twitter:title" content="ConnectHub - Professional Community Platform">
+    <meta name="twitter:description" content="Connect with professionals, share insights, and grow your network">
+
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+    @layer theme {
+        :root {
+            --primary-color: #0077b5;
+            --primary-hover: #005885;
+            --secondary-color: #f3f2ef;
+            --accent-color: #70b5f9;
+            --success-color: #057642;
+            --danger-color: #cc1016;
+            --warning-color: #f5c75d;
+            --text-primary: #000000;
+            --text-secondary: #666666;
+            --text-muted: #999999;
+            --border-color: #e6e6e6;
+            --bg-white: #ffffff;
+            --bg-gray: #f8f9fa;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+        }
+    }
+
+    @layer base {
+        body {
+            @apply bg-[var(--bg-gray)] text-[var(--text-primary)] font-sans;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            @apply font-semibold;
+        }
+    }
+
+    @layer components {
+        .btn-primary {
+            @apply bg-[var(--primary-color)] text-white px-4 py-2 rounded-lg hover:bg-[var(--primary-hover)] transition-colors duration-200 font-medium;
+        }
+        
+        .btn-secondary {
+            @apply bg-white text-[var(--primary-color)] border border-[var(--primary-color)] px-4 py-2 rounded-lg hover:bg-[var(--secondary-color)] transition-colors duration-200 font-medium;
+        }
+        
+        .btn-danger {
+            @apply bg-[var(--danger-color)] text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors duration-200 font-medium;
+        }
+        
+        .card {
+            @apply bg-white rounded-lg shadow-[var(--shadow-sm)] border border-[var(--border-color)];
+        }
+        
+        .input-field {
+            @apply w-full px-3 py-2 border border-[var(--border-color)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] focus:border-transparent;
+        }
+        
+        .navbar {
+            @apply bg-white shadow-[var(--shadow-sm)] border-b border-[var(--border-color)];
+        }
+        
+        .post-card {
+            @apply card p-4 mb-4;
+        }
+        
+        .profile-avatar {
+            @apply w-12 h-12 rounded-full object-cover border-2 border-[var(--border-color)];
+        }
+        
+        .like-button {
+            @apply flex items-center gap-2 px-3 py-1 rounded-lg hover:bg-gray-100 transition-colors duration-200 cursor-pointer;
+        }
+        
+        .like-button.liked {
+            @apply text-red-500;
+        }
+        
+        .notification-badge {
+            @apply absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center;
+        }
+    }
+
+    @layer utilities {
+        .text-shadow {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script type="text/babel" src="utils/auth.js"></script>
+    <script type="text/babel" src="utils/database.js"></script>
+    <script type="text/babel" src="components/Header.js"></script>
+    <script type="text/babel" src="components/PostCard.js"></script>
+    <script type="text/babel" src="components/CreatePost.js"></script>
+    <script type="text/babel" src="components/ProfileCard.js"></script>
+    <script type="text/babel" src="components/AuthModal.js"></script>
+    <script type="text/babel" src="components/MessageModal.js"></script>
+    <script type="text/babel" src="components/FollowerRequests.js"></script>
+    <script type="text/babel" src="app.js"></script>
+</body>
+</html>
